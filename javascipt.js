@@ -5,7 +5,7 @@ function start(){
     const capitals = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
     const numbers = ["0","1","2","3","4","5","6","7","8","9"]
 // I'm grabbing all the user input and making them const
-        let amountEl = document.getElementById("characters");
+        const amountEl = document.getElementById("characters");
         //console.log(amountEl.value);
         const specialEl = document.getElementById("special");
         //console.log(specialEl.checked);
@@ -13,23 +13,34 @@ function start(){
         //console.log(numberEl.checked);
         const capitalEl = document.getElementById("uppercase");
         //console.log(capitalEl.checked);
-// I'm setting up my randomizers
-    let randomLetters = Math.floor(Math.random()*letters.length);
-       // console.log(randomLetters)
-    let randomSpecials = Math.floor(Math.random()*specials.length);
-        //console.log(randomSpecials);
-    let randomNumbers = Math.floor(Math.random()*numbers.length);
-        //console.log(randomNumbers);
 // This function will generate the password
    
 let password = "";
-//if (specialEl.checked === true){
-  //  amountEl = amountEl - 2;
-    //console.log(amountEl.value);
-//} 
-for (let loop = 0; loop < amountEl.value; loop++) {
-    password = password +letters[randomLetters]
+
+if (specialEl.checked === true){
+    amountEl.value = amountEl.value - 2;
+
+for (let loop = 0; loop < 2; loop++) {
+        let add = specials[Math.floor(Math.random()*specials.length)];
+        password = password + add;}
 }
+if (numberEl.checked === true){
+    amountEl.value = amountEl.value - 2;
+for (let loop = 0; loop < 2; loop++) {
+    let add = numbers[Math.floor(Math.random()*numbers.length)];
+    password = password + add;}
+}
+if (capitalEl.checked === true){
+    amountEl.value = amountEl.value - 2;
+for (let loop = 0; loop < 2; loop++) {
+    let add = capitals[Math.floor(Math.random()*capitals.length)];
+    password = password + add;}
+}
+
+for (let loop = 0; loop < amountEl.value; loop++) {
+    let add = letters[Math.floor(Math.random()*letters.length)];
+    password = password + add;
+
 const jumbotron = document.getElementById("jumbotron");
 jumbotron.innerHTML= "your password is " + password;
-}
+}}
