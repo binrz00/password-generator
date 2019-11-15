@@ -13,8 +13,12 @@ function start(){
         //console.log(numberEl.checked);
         const capitalEl = document.getElementById("uppercase");
         //console.log(capitalEl.checked);
-// This function will generate the password
-   
+// This will ensure the password is at least 8 characters
+   if(amountEl.value < 8){
+       alert("You must select at least 8 characters");
+       amountEl.value = 8;
+   }
+// this will generate the password
 let password = "";
 
 if (specialEl.checked === true){
