@@ -1,4 +1,4 @@
-# password-generator
+# password-generator https://binrz00.github.io/password-generator/
     Passwords are everywhere on the web and the stronger the password the more secure you feel.
 This app will generate a random password for you with your parameters.
 The javascript in this app is simple but effective. I had the most difficulties with the dropdown selector
